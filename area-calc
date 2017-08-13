@@ -1,0 +1,30 @@
+'''This program will calculate the areas of circles and triangles.'''
+from math import pi 
+from time import sleep
+from datetime import datetime
+#variables needed later
+now = datetime.now()
+hint = "Don't forget to include the correct units! \nExiting..."
+#starting sequence
+print "The calculator is starting up."
+print '%s/%s/%s %s:%s' % (now.month, now.day, now.year, now.hour, now.minute)
+# "loading" sequence
+sleep(1)
+#getting shape from user
+option = raw_input("Enter C for Circle or T for Triangle: ")
+option = option.upper()
+if option == 'C': 
+  radius = float(raw_input("Please input the radius: "))
+  area = pi * (radius**2)
+  print "The pie is baking..."
+  sleep(1)
+  print ("Area: %.2f. \n%s" % (area, hint))
+elif option == 'T':
+  base = float(raw_input("Please input the base: "))
+  height = float(raw_input("Please input the height: "))
+  areaTri = base * height * 0.5
+  print "Uni Bi Tri..."
+  sleep(1)
+  print "The area is %.2f. \n%s" % (areaTri, hint)
+else: 
+  print "You entered garbage. The program will exit."
